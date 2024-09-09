@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     private void Awake()
     {
        rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
     // Update is called once per frame
     void Update()
@@ -19,6 +20,7 @@ public class Player : MonoBehaviour
         horizontal = Input.GetAxis("Horizontal");
 
         this.rb.velocity = new Vector2(horizontal * 8f, this.rb.velocity.y);
+        animator.SetFloat("speed", Mathf.Abs(horizontal));
 
         flip();
 
