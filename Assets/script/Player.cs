@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
     private Rigidbody2D rb;
     private float horizontal;
     private bool IsfaceIsright = true;
+    private Animator animator;
 
     private void Awake()
     {
